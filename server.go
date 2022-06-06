@@ -26,6 +26,8 @@ func main() {
 	r := gin.Default()
 	r.LoadHTMLGlob("view/*.html")
 
+	r.Static("/assets", "./assets")
+
 	authRoutes := r.Group("auth")
 	{
 		authRoutes.POST("/register", authController.Register)
