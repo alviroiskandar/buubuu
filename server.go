@@ -26,6 +26,7 @@ func main() {
 	r := gin.Default()
 	r.LoadHTMLGlob("view/*.html")
 	r.Static("/assets", "./assets")
+	r.GET("/", authController.Index)
 
 	authRoutes := r.Group("auth")
 	{
