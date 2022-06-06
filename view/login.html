@@ -3,6 +3,7 @@
 <head>
     <title>Login</title>
     <script type="text/javascript" src="/assets/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/common.css"/>
 </head>
 <body>
 <style type="text/css">
@@ -25,6 +26,7 @@ body {
     text-align: left;
 }
 </style>
+<a href="/"><h2 style="text-align: center;">Back to Index</h2></a>
 <div class="login_form_box">
     <h1>Login Form</h1>
     <form id="login_form" method="POST" action="javascript:void(0);">
@@ -44,6 +46,11 @@ body {
                     <div style="margin-top: 20px; margin-bottom: 20px;">
                         <input type="submit" name="submit" value="Login"/>
                     </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <p>Don't have an account? <a href="/auth/register">Register</a></p>
                 </td>
             </tr>
         </table>
