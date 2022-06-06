@@ -13,6 +13,7 @@ import (
 
 // contract what this controller can do
 type AuthController interface {
+	Index(ctx *gin.Context)
 	Login(ctx *gin.Context)
 	Register(ctx *gin.Context)
 }
@@ -27,6 +28,13 @@ func NewAuthController(authService service.AuthService, jwtService service.JWTSe
 	return &authController{
 		authService: authService,
 		jwtService:  jwtService,
+	}
+}
+
+func (c *authController) Index(ctx *gin.Context) {
+	if (ctx.Request.Method == "GET") {
+		ctx.HTML(http.StatusOK, "index.html", gin.H{})
+		return
 	}
 }
 
